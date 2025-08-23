@@ -17,13 +17,6 @@
     <title>{{ page.title }}</title>
   </head>
   <body>
-    <nav id="header-nav">
-      <ul id="header">
-        <li><a href="">home</a></li>
-        <li><a href="">blog</a></li>
-        <li><a href="">projects</a></li>
-      </ul>
-    </nav>
-    {{ content }}
+    {% include header-nav.html %} {{ content }}
   </body>
 </html>
