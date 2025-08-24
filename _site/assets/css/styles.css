@@ -5,9 +5,9 @@ html {
   font-size: larger;
 }
 
-#name {
+#pixel-strong {
   color: #4ade80;
-  font-size: 75%;
+  font-size: 1.75rem;
   font-family: "Press Start 2P", system-ui;
 }
 
@@ -124,8 +124,8 @@ a.icon {
   body {
     padding: 1% 10%;
   }
-  #name {
-    font-size: 60%;
+  #pixel-strong {
+    font-size: 1rem;
   }
   #header > li {
     margin: 0em 0.1em;
@@ -146,8 +146,8 @@ a.icon {
   body {
     padding: 1% 10%;
   }
-  #name {
-    font-size: 70%;
+  #pixel-strong {
+    font-size: 1.3rem;
   }
   ul#header {
     padding: 0.25em;
