@@ -17,6 +17,8 @@
     <title>{{ page.title }}</title>
   </head>
   <body>
-    {% include header-nav.html %} {{ content }} {% include footer-nav.html %}
+    {% include header-nav.html %}
+    <div id="content">{{ content }}</div>
+    {% include footer-nav.html %}
   </body>
 </html>
