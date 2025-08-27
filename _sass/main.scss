@@ -29,15 +29,23 @@ a {
 }
 
 /* mobile */
-@media screen and (width <= 360px) {
+@media screen and (width <= 450px) {
   #pixel-strong {
-    font-size: 1rem;
+    font-size: 1.25rem;
+  }
+
+  body {
+    padding: 1% 5%;
   }
 }
 
 /* tablet */
-@media screen and (360px < width <= 768px) {
+@media screen and (450px < width <= 850px) {
   #pixel-strong {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+  }
+
+  body {
+    padding: 1% 10%;
   }
 }
