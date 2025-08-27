@@ -6,12 +6,6 @@ html {
   height: 100vh;
 }
 
-#pixel-strong {
-  color: #4ade80;
-  font-size: 1.75rem;
-  font-family: "Press Start 2P", system-ui;
-}
-
 body {
   padding: 1% 20%;
   line-height: 1.6;
@@ -20,24 +14,14 @@ body {
   min-height: 94.5vh;
 }
 
+#pixel-strong {
+  color: #4ade80;
+  font-size: 1.75rem;
+  font-family: "Press Start 2P", system-ui;
+}
+
 #content {
   flex: 1;
-}
-
-ul#header {
-  padding: 0.25em;
-  display: flex;
-  margin-bottom: 0em;
-  margin-top: 0.5em;
-  flex-direction: row;
-  justify-content: center;
-  border-radius: 1.5vh;
-  background-color: #262626;
-}
-
-#header > li {
-  list-style-type: none;
-  margin: 0em 0.7em;
 }
 
 a {
@@ -46,45 +30,14 @@ a {
 
 /* mobile */
 @media screen and (width <= 360px) {
-  body {
-    padding: 1% 10%;
-  }
-
   #pixel-strong {
     font-size: 1rem;
-  }
-  #header > li {
-    margin: 0em 0.1em;
-  }
-
-  ul#header {
-    padding: 0.25em;
-    display: flex;
-    margin-bottom: 0%;
-    margin-top: 1em;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-color: #262626;
   }
 }
 
 /* tablet */
 @media screen and (360px < width <= 768px) {
-  body {
-    padding: 1% 10%;
-  }
-
   #pixel-strong {
     font-size: 1.3rem;
-  }
-
-  ul#header {
-    padding: 0.25em;
-    display: flex;
-    margin-bottom: 0%;
-    margin-top: 1em;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-color: #262626;
   }
 }
