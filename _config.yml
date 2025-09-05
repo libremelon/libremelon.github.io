@@ -8,5 +8,10 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
-image: /assets/images/pixelated-melon-banner.png
 description: "I'm a full stack dev and first year CSE undergrad 👾"
+
+defaults:
+  - scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      image: /assets/images/pixelated-melon-banner.png
