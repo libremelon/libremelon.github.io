@@ -1,0 +1,14 @@
+ul#header {
+  padding: 0.5vh 0vh;
+  margin-top: 4vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 1.5vh;
+  background-color: #262626;
+}
+
+#header > li {
+  list-style-type: none;
+  margin: 0em 0.7em;
+}

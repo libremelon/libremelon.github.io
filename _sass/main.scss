@@ -1,0 +1,54 @@
+html {
+  background-color: #171717;
+  font-family: "Geist", sans-serif;
+  color: #f5f5f5;
+  font-size: 2.5vh;
+  height: 100vh;
+}
+
+body {
+  padding: 0vw 25vw;
+  margin: 0%;
+  line-height: 1.6;
+  min-height: 95vh;
+}
+
+#pixel-strong {
+  color: #4ade80;
+  font-size: 1.75rem;
+  font-family: "Press Start 2P", system-ui;
+}
+
+#strong {
+  color: #4ade80;
+}
+
+#content {
+  min-height: 76vh;
+}
+
+a {
+  color: #4ade80;
+}
+
+/* mobile */
+@media screen and (width <= 450px) {
+  #pixel-strong {
+    font-size: 1.25rem;
+  }
+
+  body {
+    padding: 0vw 7.5vw;
+  }
+}
+
+/* tablet */
+@media screen and (450px < width <= 850px) {
+  #pixel-strong {
+    font-size: 1.5rem;
+  }
+
+  body {
+    padding: 0vw 10vw;
+  }
+}
