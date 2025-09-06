@@ -9,7 +9,7 @@ description: find all my blog posts here :D
 
 <span>Find blog posts by tag</span>
 
-{% comment %} store all tags in a string separated by commmas => split str at comma => store it in a list {% endcomment %}
+<!-- store all tags in a string separated by commmas => split str at comma => store it in a list -->
 {% capture site_tags %} 
     {% for tag in site.tags %}
     {{ tag | first }} {% unless forloop.last %},{% endunless  %}
@@ -20,5 +20,8 @@ description: find all my blog posts here :D
 <ul>
   {% for tag in tags_list %}
     <button>{{ tag }}</button>
+
+    <!-- all req blogs under a tag shall be stored in a hidden div.
+    When a tag btn is clicked, the div containing blogs under that tag will be unhidden, rest hidden -->
   {% endfor %}
 </ul>
