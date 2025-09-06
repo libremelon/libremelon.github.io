@@ -5,6 +5,12 @@ description: find all my blog posts here :D
 ---
 
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/blog.css" />
+<script>
+  function unhidePosts(tag) {
+    let posts = document.getElementsByClassName("posts")
+    console.log(posts);
+  }
+</script>
 <h1 id="strong">{{ page.title }}</h1>
 
 <span>Find blog posts by tag</span>
@@ -19,12 +25,15 @@ description: find all my blog posts here :D
 
 <ul>
   {%- for tag in tags_list -%}
-    <button onclick="">{{ tag }}</button>
+    <button onclick="unhidePosts(`{{ tag }}`)">{{ tag }}</button>
   {%- endfor -%}
 </ul>
 
 {%- for tag in tags_list -%}
-  <ul id="{{ tag }}" style="display: none;">
+  <ul
+    id="{{ tag }}"
+    class="posts"
+    style="display: none;">
     {%- for post in site.tags[tag] -%}
       <li>
         <h3>
