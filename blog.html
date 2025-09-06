@@ -10,6 +10,6 @@ description: find all my blog posts here :D
 
 <ul>
   {% for tag in site.tags %}
-  <li>{{ tag | first }}</li>
+  <li><button type="button">{{ tag | first }}</button></li>
   {% endfor %}
 </ul>
