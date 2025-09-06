@@ -19,20 +19,19 @@ description: find all my blog posts here :D
 
 <ul>
   {%- for tag in tags_list -%}
-    <button>{{ tag }}</button>
-
-    <!-- all req blogs under a tag shall be stored in a hidden div.
-      When a tag btn is clicked, the div containing blogs under that tag will be unhidden, rest hidden -->
-    <ul>
-      {%- for post in site.tags[tag] -%}
-        <li>
-          <h3>
-            <a href="{{ post.url }}">
-              > {{ post.title }}</a>
-          </h3>
-          {{ post.excerpt }}
-        </li>
-      {%- endfor -%}
-    </ul>
+    <button onclick="">{{ tag }}</button>
   {%- endfor -%}
 </ul>
+
+{%- for tag in tags_list -%}
+  <ul id="{{ tag }}" style="display: none;">
+    {%- for post in site.tags[tag] -%}
+      <li>
+        <h3>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </h3>
+        {{ post.excerpt }}
+      </li>
+    {%- endfor -%}
+  </ul>
+{%- endfor -%}
