@@ -6,10 +6,19 @@ description: find all my blog posts here :D
 
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/blog.css" />
 <h1 id="strong">{{ page.title }}</h1>
+<script>
+  function displayPosts(tag) {
+    console.log(`${tag} clicked`);
+  }
+</script>
 <span>Find blog posts by tag</span>
 
 <ul>
   {% for tag in site.tags %}
-  <li><button type="button">{{ tag | first }}</button></li>
+  <li>
+    <button type="button" onclick="displayPosts(`{{ tag | first }}`)">
+      {{ tag | first }}
+    </button>
+  </li>
   {% endfor %}
 </ul>
