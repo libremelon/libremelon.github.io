@@ -16,3 +16,9 @@ description: find all my blog posts here :D
     {% endfor %}
 {% endcapture %}
 {% assign tags_list = site_tags | split: ',' | sort natural %}
+
+<ul>
+  {% for tag in tags_list %}
+    <button>{{ tag }}</button>
+  {% endfor %}
+</ul>
