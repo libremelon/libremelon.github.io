@@ -6,29 +6,40 @@ description: find all my blog posts here :D
 
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/blog.css" />
 <script>
+  // unhides posts for a given tag, hides the others
   function unhidePosts(tag) {
     let posts = document.getElementsByClassName("posts")
-    console.log(posts);
+    Array.from(posts).forEach(post => {
+      if(post.id === tag) {
+        post.style["display"] = "";
+      } else {
+        post.style["display"] = "none";
+      } 
+    });
   }
 </script>
 <h1 id="strong">{{ page.title }}</h1>
 
 <span>Find blog posts by tag</span>
 
-<!-- store all tags in a string separated by commmas => split str at comma => store it in a list -->
+{% comment %} list of all the tags across posts/pages {% endcomment %}
 {%- capture site_tags -%} 
     {%- for tag in site.tags -%}
-    {{ tag | first }} {%- unless forloop.last -%},{%- endunless  -%}
+    {{ tag | first }} {%- unless forloop.last -%},{%- endunless -%}
     {%- endfor -%}
 {%- endcapture -%}
-{%- assign tags_list = site_tags | split: ',' | sort natural -%}
+{% comment %} ^ store tags in site_tags var separated by commas, 
+ then split them at commas to make a list {% endcomment %}
+{%- assign tags_list = site_tags | split: ',' | sort: natural -%}
 
+{% comment %} buttons labelled with all tag names {% endcomment %}
 <ul>
   {%- for tag in tags_list -%}
     <button onclick="unhidePosts(`{{ tag }}`)">{{ tag }}</button>
   {%- endfor -%}
 </ul>
 
+{% comment %} hidden blogs under a tag {% endcomment %}
 {%- for tag in tags_list -%}
   <ul
     id="{{ tag }}"
