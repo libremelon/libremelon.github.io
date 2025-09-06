@@ -8,3 +8,11 @@ description: find all my blog posts here :D
 <h1 id="strong">{{ page.title }}</h1>
 
 <span>Find blog posts by tag</span>
+
+{% comment %} store all tags in a string separated by commmas => split str at comma => store it in a list {% endcomment %}
+{% capture site_tags %} 
+    {% for tag in site.tags %}
+    {{ tag | first }} {% unless forloop.last %},{% endunless  %}
+    {% endfor %}
+{% endcapture %}
+{% assign tags_list = site_tags | split: ',' | sort natural %}
