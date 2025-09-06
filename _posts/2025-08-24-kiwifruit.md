@@ -1,5 +1,6 @@
 ---
 layout: post
+tags: temp kiwi
 ---
 
 Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the
