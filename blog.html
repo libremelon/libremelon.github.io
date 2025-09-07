@@ -52,7 +52,7 @@ description: find all my blog posts here :D
     {%- for post in site.tags[tag] -%}
       <li>
         <h3>
-          <a href="{{ post.url }}">{{ post.title }}</a>
+          <a href="{{ post.url }}">> {{ post.title }}</a>
         </h3>
         {{ post.excerpt }}
       </li>
@@ -65,7 +65,7 @@ description: find all my blog posts here :D
   {%- for post in site.posts -%}
     <li>
       <h3>
-        <a href="{{ post.url }}">{{ post.title }}</a>
+        <a href="{{ post.url }}">> {{ post.title }}</a>
       </h3>
       {{ post.excerpt }}
     </li>
