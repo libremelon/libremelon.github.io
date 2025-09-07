@@ -36,8 +36,7 @@ a {
   color: #4ade80;
 }
 
-button,
-#fake-btn {
+#btn {
   margin-right: 0.75vh;
   background-color: #262626;
   color: #4ade80;
@@ -46,9 +45,10 @@ button,
   border: none;
 }
 
-button:hover {
+#btn:hover {
   background-color: #4ade80;
   color: #171717;
+  cursor: pointer;
 }
 
 /* mobile */

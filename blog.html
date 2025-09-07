@@ -32,9 +32,9 @@ description: find all my blog posts here :D
 
 {% comment %} create tag name labelled buttons {% endcomment %}
 {%- for tag in tags_list -%}
-  <button onclick="unhidePosts(`{{ tag }}`)">#{{ tag }}</button>
+  <span id="btn" onclick="unhidePosts(`{{ tag }}`)">#{{ tag }}</span>
 {%- endfor -%}
-<button onclick="unhidePosts(`reset`)">↻</button>
+<span id="btn" onclick="unhidePosts(`reset`)">↻</span>
 
 {% comment %} hidden blogs under a tag {% endcomment %}
 {%- for tag in tags_list -%}
