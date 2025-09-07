@@ -32,7 +32,7 @@ description: find all my blog posts here :D
 
 {% comment %} create tag name labelled buttons {% endcomment %}
 {%- for tag in tags_list -%}
-  <button onclick="unhidePosts(`{{ tag }}`)">{{ tag }}</button>
+  <button onclick="unhidePosts(`{{ tag }}`)">#{{ tag }}</button>
 {%- endfor -%}
 <button onclick="unhidePosts(`reset`)">↻</button>
 

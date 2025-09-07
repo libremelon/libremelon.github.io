@@ -36,7 +36,13 @@ button {
   background-color: #262626;
   color: #4ade80;
   border-radius: 1vh;
-  padding: 0.75vh;
+  padding: 0.75vh 1.5vh;
+  border: none;
+}
+
+button:hover {
+  background-color: #4ade80;
+  color: #171717;
 }
 
 /* mobile */
