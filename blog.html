@@ -20,7 +20,7 @@ description: find all my blog posts here :D
 </script>
 <h1 id="strong">{{ page.title }}</h1>
 
-<span>Find blog posts by tag</span>
+<span>Filter by tag:</span>
 
 {% comment %} list of all the tags across posts/pages {% endcomment %}
 {%- capture site_tags -%} 
@@ -33,11 +33,10 @@ description: find all my blog posts here :D
 {%- assign tags_list = site_tags | split: ',' | sort: natural -%}
 
 {% comment %} create tag name labelled buttons {% endcomment %}
-<ul>
-  {%- for tag in tags_list -%}
-    <button onclick="unhidePosts(`{{ tag }}`)">{{ tag }}</button>
-  {%- endfor -%}
-</ul>
+{%- for tag in tags_list -%}
+  <button onclick="unhidePosts(`{{ tag }}`)">{{ tag }}</button>
+{%- endfor -%}
+<button onclick="unhidePosts(`reset`)">↻</button>
 
 {% comment %} hidden blogs under a tag {% endcomment %}
 {%- for tag in tags_list -%}
@@ -57,7 +56,7 @@ description: find all my blog posts here :D
 {%- endfor -%}
 
 {% comment %} display all blogs initially {% endcomment %}
-<ul id="all" class="posts">
+<ul id="reset" class="posts">
   {%- for post in site.posts -%}
     <li>
       <h3>
