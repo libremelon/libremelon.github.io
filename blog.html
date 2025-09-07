@@ -32,7 +32,7 @@ description: find all my blog posts here :D
  then split them at commas to make a list {% endcomment %}
 {%- assign tags_list = site_tags | split: ',' | sort: natural -%}
 
-{% comment %} buttons labelled with all tag names {% endcomment %}
+{% comment %} create tag name labelled buttons {% endcomment %}
 <ul>
   {%- for tag in tags_list -%}
     <button onclick="unhidePosts(`{{ tag }}`)">{{ tag }}</button>
@@ -55,3 +55,15 @@ description: find all my blog posts here :D
     {%- endfor -%}
   </ul>
 {%- endfor -%}
+
+{% comment %} display all blogs initially {% endcomment %}
+<ul id="all" class="posts">
+  {%- for post in site.posts -%}
+    <li>
+      <h3>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </h3>
+      {{ post.excerpt }}
+    </li>
+  {%- endfor -%}
+</ul>
