@@ -34,7 +34,10 @@ description: find all my blog posts here :D
 {%- for tag in tags_list -%}
   <span id="btn" onclick="unhidePosts(`{{ tag }}`)">#{{ tag }}</span>
 {%- endfor -%}
-<span id="btn" onclick="unhidePosts(`reset`)">↻</span>
+<span
+  id="btn"
+  style="font-weight: bold;"
+  onclick="unhidePosts(`reset`)">↻</span>
 
 {% comment %} hidden blogs under a tag {% endcomment %}
 {%- for tag in tags_list -%}
