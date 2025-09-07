@@ -4,7 +4,7 @@ description: "{{ post.excerpt }}"
 ---
 
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/blog.css" />
-<h1>{{ page.title }}</h1>
+<h1 class="title" id="strong">{{ page.title }}</h1>
 <p id="date">{{ page.date | date_to_string}}</p>
 
 {{ content }}
