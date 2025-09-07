@@ -39,14 +39,16 @@ a {
 #btn,
 #fake-btn {
   margin-right: 0.75vh;
+  margin-bottom: 0.75vh;
   background-color: #262626;
   color: #4ade80;
   border-radius: 1vh;
-  padding: 0.75vh 1.5vh;
+  padding: 0.25vh 1.25vh;
   border: none;
 }
 
-#btn:hover {
+#btn:hover,
+#btn:active {
   background-color: #4ade80;
   color: #171717;
   cursor: pointer;

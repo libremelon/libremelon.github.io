@@ -8,8 +8,5 @@ description: "{{ post.excerpt }}"
 <h1 class="title" id="strong">{{ page.title }}</h1>
 <p id="date">{{ page.date | date_to_string }}</p>
 {% for tag in page.tags %}
-  <span id="fake-btn">#{{ tag }}</span>
-{% endfor %}
-
-
-{{ content }}
+<span style="display: inline-block" id="fake-btn">#{{ tag }}</span>
+{% endfor %} {{ content }}
