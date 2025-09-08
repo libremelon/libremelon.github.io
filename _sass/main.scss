@@ -30,6 +30,8 @@ body {
 
 #content {
   min-height: 76vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -58,6 +60,23 @@ a {
   background-color: #4ade80;
   color: #171717;
   cursor: pointer;
+}
+
+hr {
+  width: 20vh;
+}
+
+table {
+  border-style: solid;
+  border-radius: 2vh;
+  border-collapse: collapse;
+}
+
+tr,
+th,
+td {
+  border-style: solid;
+  padding: 2vh;
 }
 
 /* mobile */

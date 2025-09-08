@@ -2,8 +2,15 @@ ul {
   list-style-type: none; /* Removes bullets */
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 #date {
   color: #a3a3a3;
+}
+
+#tag-btns {
+  display: flex;
+  flex-direction: row;
 }

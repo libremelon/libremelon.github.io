@@ -31,17 +31,19 @@ description: find all my blog posts here :D
 {%- assign tags_list = site_tags | split: ',' | sort: natural -%}
 
 {% comment %} create tag name labelled buttons {% endcomment %}
-{%- for tag in tags_list -%}
+<div id="tag-btns">
+  {%- for tag in tags_list -%}
+    <span
+      style="display: inline-block"
+      id="btn"
+      onclick="unhidePosts(`{{ tag }}`)">#{{ tag }}</span>
+  {%- endfor -%}
   <span
-    style="display: inline-block"
     id="btn"
-    onclick="unhidePosts(`{{ tag }}`)">#{{ tag }}</span>
-{%- endfor -%}
-<span
-  id="btn"
-  style="display: inline-block"
-  style="font-weight: bold;"
-  onclick="unhidePosts(`reset`)">↻</span>
+    style="display: inline-block"
+    style="font-weight: bold;"
+    onclick="unhidePosts(`reset`)">↻</span>
+</div>
 
 {% comment %} hidden blogs under a tag {% endcomment %}
 {%- for tag in tags_list -%}
