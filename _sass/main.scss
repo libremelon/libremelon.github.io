@@ -66,6 +66,19 @@ hr {
   width: 10vw;
 }
 
+table {
+  border-style: solid;
+  border-radius: 2vh;
+  border-collapse: collapse;
+}
+
+tr,
+th,
+td {
+  border-style: solid;
+  padding: 2vh;
+}
+
 /* mobile */
 @media screen and (width <= 450px) {
   #pixel-strong {
