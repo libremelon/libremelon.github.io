@@ -14,3 +14,18 @@ ul.posts {
   display: flex;
   flex-direction: row;
 }
+
+#post-li {
+  background-color: #262626;
+  border-radius: 2vh;
+  padding: 1vh 3vh;
+  margin-top: 2vh;
+}
+
+li#post-li > p {
+  margin: 1vh 0vh;
+}
+
+li#post-li > #date {
+  color: #d4d4d4;
+}
