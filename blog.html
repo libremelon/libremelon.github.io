@@ -8,69 +8,63 @@ description: find all my blog posts here :D
 <script>
   // unhides posts for a given tag, hides the others
   function unhidePosts(tag) {
-    let posts = document.getElementsByClassName("posts")
-    Array.from(posts).forEach(post => {
-      if(post.id === tag) {
+    let posts = document.getElementsByClassName("posts");
+    Array.from(posts).forEach((post) => {
+      if (post.id === tag) {
         post.style["display"] = "";
       } else {
         post.style["display"] = "none";
-      } 
+      }
     });
   }
 </script>
 <h1 id="strong" class="title">{{ page.title }}</h1>
 
-{% comment %} list of all the tags across posts/pages {% endcomment %}
-{%- capture site_tags -%} 
-    {%- for tag in site.tags -%}
-    {{ tag | first }} {%- unless forloop.last -%},{%- endunless -%}
-    {%- endfor -%}
-{%- endcapture -%}
-{% comment %} ^ store tags in site_tags var separated by commas, 
- then split them at commas to make a list {% endcomment %}
-{%- assign tags_list = site_tags | split: ',' | sort: natural -%}
-
-{% comment %} create tag name labelled buttons {% endcomment %}
+{% comment %} list of all the tags across posts/pages {% endcomment %} {%-
+capture site_tags -%} {%- for tag in site.tags -%} {{ tag | first }} {%- unless
+forloop.last -%},{%- endunless -%} {%- endfor -%} {%- endcapture -%} {% comment
+%} ^ store tags in site_tags var separated by commas, then split them at commas
+to make a list {% endcomment %} {%- assign tags_list = site_tags | split: ',' |
+sort: natural -%} {% comment %} create tag name labelled buttons {% endcomment
+%}
 <div id="tag-btns">
   {%- for tag in tags_list -%}
-    <span
-      style="display: inline-block"
-      id="btn"
-      onclick="unhidePosts(`{{ tag }}`)">#{{ tag }}</span>
+  <span
+    style="display: inline-block"
+    id="btn"
+    onclick="unhidePosts(`{{ tag }}`)"
+    >#{{ tag }}</span
+  >
   {%- endfor -%}
   <span
     id="btn"
     style="display: inline-block"
-    style="font-weight: bold;"
-    onclick="unhidePosts(`reset`)">↻</span>
+    style="font-weight: bold"
+    onclick="unhidePosts(`reset`)"
+    >↻</span
+  >
 </div>
 
-{% comment %} hidden blogs under a tag {% endcomment %}
-{%- for tag in tags_list -%}
-  <ul
-    id="{{ tag }}"
-    class="posts"
-    style="display: none;">
-    {%- for post in site.tags[tag] -%}
-      <li>
-        <h3>
-          <a class="lonk" href="{{ post.url }}">{{ post.title }}</a>
-        </h3>
-        {{ post.excerpt }}
-      </li>
-    {%- endfor -%}
-  </ul>
-{%- endfor -%}
-
-{% comment %} display all blogs initially {% endcomment %}
+{% comment %} hidden blogs under a tag {% endcomment %} {%- for tag in tags_list
+-%}
+<ul id="{{ tag }}" class="posts" style="display: none">
+  {%- for post in site.tags[tag] -%}
+  <li>
+    <h3>
+      <a class="lonk" href="{{ post.url }}">{{ post.title }}</a>
+    </h3>
+    {{ post.excerpt }}
+  </li>
+  {%- endfor -%}
+</ul>
+{%- endfor -%} {% comment %} display all blogs initially {% endcomment %}
 <ul id="reset" class="posts">
   {%- for post in site.posts -%}
-    <li>
-      <h3>
-        <a class="lonk" href="{{ post.url }}">
-          {{ post.title }}</a>
-      </h3>
-      {{ post.excerpt }}
-    </li>
+  <li>
+    <h3>
+      <a class="lonk" href="{{ post.url }}"> {{ post.title }}</a>
+    </h3>
+    {{ post.excerpt }}
+  </li>
   {%- endfor -%}
 </ul>
