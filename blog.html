@@ -27,7 +27,7 @@ description: find all my blog posts here
     {%- endfor -%} 
   {%- endcapture -%}
 {% comment %} ^ store tags in site_tags var separated by commas, 
-                     then split them at commas to make a list 
+                             then split them at commas to make a list 
    {% endcomment %}
 {%- assign tags_list = site_tags | split: ',' | sort: natural -%}
 
@@ -54,24 +54,27 @@ description: find all my blog posts here
     class="posts"
     style="display: none">
     {%- for post in site.tags[tag] -%}
-      <li id="post-li">
-        <h3>
-          <a class="lonk" href="{{ post.url }}">{{ post.title }}</a>
-        </h3>
-        <span id="date">{{ post.date | date_to_string }}</span>
-      </li>
+      <a id="post-link" href="{{ post.url }}">
+        <li id="post-li">
+          <p>
+            {{ post.title }}
+          </p>
+          <span id="date">{{ post.date | date_to_string }}</span>
+        </li>
+      </a>
     {%- endfor -%}
   </ul>
 {%- endfor -%}
 {% comment %} display all blogs initially {% endcomment %}
 <ul id="reset" class="posts">
   {%- for post in site.posts -%}
-    <li id="post-li">
-      <p>
-        <a href="{{ post.url }}">
-          {{ post.title }}</a>
-      </p>
-      <span id="date">{{ post.date | date_to_string }}</span>
-    </li>
+    <a id="post-link" href="{{ post.url }}">
+      <li id="post-li">
+        <p>
+          {{ post.title }}
+        </p>
+        <span id="date">{{ post.date | date_to_string }}</span>
+      </li>
+    </a>
   {%- endfor -%}
 </ul>
